@@ -1,23 +1,21 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Genre;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
-@Table(name = "Authors")
-public class Author {
+@Table(name = "Genres")
+public class Genre {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
     private String name;
 
-    public Author() {
+    public Genre() {
     }
 
-    public Author(String name) {
+    public Genre(String name) {
         this.name = name;
     }
 
@@ -39,6 +37,9 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" + "id='" + id + '\'' + ", name='" + name + '\'' + '}';
+        return "Genre{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

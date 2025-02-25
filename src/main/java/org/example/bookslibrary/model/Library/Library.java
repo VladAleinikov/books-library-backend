@@ -1,15 +1,15 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Library;
 
 import jakarta.persistence.*;
-import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.example.bookslibrary.model.Book.Book;
+import org.example.bookslibrary.model.FavoriteAuthors.FavoriteAuthors;
+import org.example.bookslibrary.model.FavoriteGenres.FavoriteGenres;
+import org.example.bookslibrary.model.Shelve.Shelve;
+import org.example.bookslibrary.model.User.User;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
-enum Status {
-    ADDED, IN_PROCESS, FINISHED, DELETED
-}
 
 @Entity
 @Table(name = "Library")

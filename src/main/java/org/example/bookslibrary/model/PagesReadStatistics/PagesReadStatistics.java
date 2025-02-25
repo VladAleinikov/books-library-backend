@@ -1,9 +1,7 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.PagesReadStatistics;
 
 import jakarta.persistence.*;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity

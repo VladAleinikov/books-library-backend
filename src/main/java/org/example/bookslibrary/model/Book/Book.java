@@ -1,10 +1,11 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Book;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Author.Author;
+import org.example.bookslibrary.model.Genre.Genre;
+import org.example.bookslibrary.model.Review.Review;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity

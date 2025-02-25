@@ -1,6 +1,8 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Message;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Shelve.Shelve;
+import org.example.bookslibrary.model.User.User;
 
 import java.util.Date;
 

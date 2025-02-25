@@ -1,4 +1,4 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.BooksReadStatistics;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

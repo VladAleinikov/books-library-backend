@@ -1,6 +1,10 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Review;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Book.Book;
+import org.example.bookslibrary.model.FavoriteAuthors.FavoriteAuthors;
+import org.example.bookslibrary.model.FavoriteGenres.FavoriteGenres;
+import org.example.bookslibrary.model.User.User;
 
 import java.util.Date;
 import java.util.Set;

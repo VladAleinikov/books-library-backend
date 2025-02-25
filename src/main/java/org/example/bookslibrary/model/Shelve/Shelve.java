@@ -1,6 +1,7 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.Shelve;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Library.Library;
 
 import java.util.HashSet;
 import java.util.Set;

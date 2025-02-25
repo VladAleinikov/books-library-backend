@@ -1,6 +1,8 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.FavoriteAuthors;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Author.Author;
+import org.example.bookslibrary.model.User.User;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity

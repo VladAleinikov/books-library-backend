@@ -1,8 +1,9 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.FavoriteGenres;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Genre.Genre;
+import org.example.bookslibrary.model.User.User;
 import org.hibernate.annotations.ColumnDefault;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @Table(name = "FavoriteGenres")

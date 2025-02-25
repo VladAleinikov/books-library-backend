@@ -1,6 +1,15 @@
-package org.example.bookslibrary.repository;
+package org.example.bookslibrary.model.User;
 
 import jakarta.persistence.*;
+import org.example.bookslibrary.model.Author.Author;
+import org.example.bookslibrary.model.Book.Book;
+import org.example.bookslibrary.model.BooksReadStatistics.BooksReadStatistics;
+import org.example.bookslibrary.model.FavoriteAuthors.FavoriteAuthors;
+import org.example.bookslibrary.model.FavoriteGenres.FavoriteGenres;
+import org.example.bookslibrary.model.Genre.Genre;
+import org.example.bookslibrary.model.Library.Library;
+import org.example.bookslibrary.model.PagesReadStatistics.PagesReadStatistics;
+import org.example.bookslibrary.model.Shelve.Shelve;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -13,6 +22,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+
+    private String oauth2Id;
 
     private String name;
 
@@ -73,6 +84,14 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getOauth2Id() {
+        return oauth2Id;
+    }
+
+    public void setOauth2Id(String oauth2Id) {
+        this.oauth2Id = oauth2Id;
     }
 
     public String getName() {
