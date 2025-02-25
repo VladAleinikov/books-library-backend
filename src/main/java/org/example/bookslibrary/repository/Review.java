@@ -29,9 +29,8 @@ public class Review {
     @JoinColumn(name = "bookId")
     private Book book;
 
-    @PostRemove
     @PostPersist
-    public void updateBookAverageRating() {
+    public void onCreate() {
         int ratingSum = 0;
         int reviewsLength = book.getReviews().size();
 
@@ -40,10 +39,8 @@ public class Review {
         }
 
         book.setAvgRating((float) ratingSum / reviewsLength);
-    }
 
-    @PostPersist
-    public void changeAuthorRating() {
+
         FavoriteAuthors favoriteAuthor = user.findFavoriteAuthor(book.getAuthor());
         Set<FavoriteGenres> favoriteGenres = user.findFavoriteGenres(book.getGenres());
 
