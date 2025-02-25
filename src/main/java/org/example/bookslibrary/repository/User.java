@@ -19,7 +19,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    private String password;
+    private String avatarUrl;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
@@ -54,10 +54,10 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String password, Set<Library> library, Set<Shelve> shelves, Set<Book> favorites, Set<PagesReadStatistics> pagesReadStatistics, Set<BooksReadStatistics> booksReadStatistics, Set<FavoriteGenres> favoriteGenres, Set<FavoriteAuthors> favoriteAuthors) {
+    public User(String name, String email, String avatarUrl, Set<Library> library, Set<Shelve> shelves, Set<Book> favorites, Set<PagesReadStatistics> pagesReadStatistics, Set<BooksReadStatistics> booksReadStatistics, Set<FavoriteGenres> favoriteGenres, Set<FavoriteAuthors> favoriteAuthors) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.avatarUrl = avatarUrl;
         this.library = library;
         this.shelves = shelves;
         this.favorites = favorites;
@@ -91,12 +91,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public Set<Shelve> getShelves() {
@@ -248,7 +248,7 @@ public class User {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
                 ", books=" + library +
                 ", shelves=" + shelves +
                 ", favorites=" + favorites +
