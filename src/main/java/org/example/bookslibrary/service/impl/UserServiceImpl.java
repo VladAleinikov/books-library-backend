@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserResponse> getUsers(Pageable pageable) {
-        return userRepository.findAll(pageable).map(userMapper::toResponse).toList();
+    public List<UserResponse> getUsers(Pageable pageable, String searchQuery) {
+        return userRepository.findUsersByNameContaining(pageable, searchQuery).map(userMapper::toResponse).toList();
     }
 
     @Override

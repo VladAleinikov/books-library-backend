@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    List<UserResponse> getUsers(Pageable pageable);
+    List<UserResponse> getUsers(Pageable pageable, String searchQuery);
     UserResponse getUser(String userId);
     long countUsers();
     void deleteUser(String userId);

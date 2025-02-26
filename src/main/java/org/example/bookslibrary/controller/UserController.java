@@ -19,8 +19,8 @@ public class UserController {
     }
 
     @GetMapping()
-    public List<UserResponse> getUsers(@PageableDefault Pageable pageable){
-        return userService.getUsers(pageable);
+    public List<UserResponse> getUsers(@PageableDefault Pageable pageable, @RequestParam(defaultValue = "") String searchQuery){
+        return userService.getUsers(pageable, searchQuery);
     }
 
     @GetMapping("/{userId}")
