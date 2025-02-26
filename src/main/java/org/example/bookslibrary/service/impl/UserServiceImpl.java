@@ -1,31 +1,37 @@
 package org.example.bookslibrary.service.impl;
 
+import org.example.bookslibrary.dto.user.UserResponse;
 import org.example.bookslibrary.dto.user.UserSyncRequest;
+import org.example.bookslibrary.exception.NotFoundException;
+import org.example.bookslibrary.mapper.UserMapper;
 import org.example.bookslibrary.model.User.User;
 import org.example.bookslibrary.model.User.UserRepository;
 import org.example.bookslibrary.service.UserService;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
     @Override
-    public List<User> getUsers() {
-        return userRepository.findAll();
+    public List<UserResponse> getUsers(Pageable pageable) {
+        return userRepository.findAll(pageable).map(userMapper::toResponse).toList();
     }
 
     @Override
-    public Optional<User> getUser(String userId) {
-        return userRepository.findById(userId);
+    public UserResponse getUser(String userId) {
+        User user = getUserEntity(userId);
+        return userMapper.toResponse(user);
     }
 
     @Override
@@ -41,7 +47,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User syncUser(UserSyncRequest userSyncRequest) {
         return userRepository.findByOauth2Id(userSyncRequest.oauth2Id())
-                .orElseGet(()->{
+                .orElseGet(() -> {
                     User newUser = new User();
                     newUser.setOauth2Id(userSyncRequest.oauth2Id());
                     newUser.setName(userSyncRequest.name());
@@ -49,5 +55,9 @@ public class UserServiceImpl implements UserService {
                     newUser.setAvatarUrl(userSyncRequest.avatarUrl());
                     return userRepository.save(newUser);
                 });
+    }
+
+    private User getUserEntity(String userId) {
+        return userRepository.findById(userId).orElseThrow(NotFoundException::new);
     }
 }

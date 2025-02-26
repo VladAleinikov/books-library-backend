@@ -1,15 +1,12 @@
 package org.example.bookslibrary.controller;
 
-import org.example.bookslibrary.model.User.User;
-import org.example.bookslibrary.security.user.AuthUser;
+import org.example.bookslibrary.dto.user.UserResponse;
 import org.example.bookslibrary.service.UserService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "user")
@@ -22,16 +19,13 @@ public class UserController {
     }
 
     @GetMapping()
-    public List<User> getUsers(){
-        System.out.println("something");
-        return userService.getUsers();
+    public List<UserResponse> getUsers(@PageableDefault Pageable pageable){
+        return userService.getUsers(pageable);
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<User> getUser(@PathVariable("userId") String userId) {
-        Optional<User> user = userService.getUser(userId);
-        return user.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public UserResponse getUser(@PathVariable("userId") String userId) {
+        return userService.getUser(userId);
     }
 
     @GetMapping("/count")
