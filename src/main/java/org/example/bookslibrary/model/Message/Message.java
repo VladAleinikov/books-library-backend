@@ -3,13 +3,17 @@ package org.example.bookslibrary.model.Message;
 import jakarta.persistence.*;
 import org.example.bookslibrary.model.Shelve.Shelve;
 import org.example.bookslibrary.model.User.User;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "Messages")
 public class Message {
+
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
     private String text;

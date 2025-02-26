@@ -2,6 +2,7 @@ package org.example.bookslibrary.model.Shelve;
 
 import jakarta.persistence.*;
 import org.example.bookslibrary.model.Library.Library;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +12,8 @@ import java.util.Set;
 public class Shelve {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
     private String name;

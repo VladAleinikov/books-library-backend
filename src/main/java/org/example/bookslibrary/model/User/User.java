@@ -10,6 +10,7 @@ import org.example.bookslibrary.model.Genre.Genre;
 import org.example.bookslibrary.model.Library.Library;
 import org.example.bookslibrary.model.PagesReadStatistics.PagesReadStatistics;
 import org.example.bookslibrary.model.Shelve.Shelve;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -20,7 +21,8 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
     private String oauth2Id;

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.example.bookslibrary.model.Author.Author;
 import org.example.bookslibrary.model.Genre.Genre;
 import org.example.bookslibrary.model.Review.Review;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +14,8 @@ import java.util.Set;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
     private String title;
