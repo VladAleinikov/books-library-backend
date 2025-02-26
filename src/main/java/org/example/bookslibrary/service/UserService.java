@@ -1,5 +1,6 @@
 package org.example.bookslibrary.service;
 
+import org.example.bookslibrary.dto.user.UserSyncRequest;
 import org.example.bookslibrary.model.User.User;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface UserService {
     Optional<User> getUser(String userId);
     long countUsers();
     void deleteUser(String userId);
+    User syncUser(UserSyncRequest userSyncRequest);
 }
