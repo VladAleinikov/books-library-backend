@@ -1,12 +1,12 @@
-package org.example.bookslibrary.service.impl;
+package org.example.bookslibrary.modules.User.service.impl;
 
-import org.example.bookslibrary.dto.user.UserResponse;
-import org.example.bookslibrary.dto.user.UserSyncRequest;
+import org.example.bookslibrary.modules.User.dto.user.UserResponse;
+import org.example.bookslibrary.modules.User.dto.user.UserSyncRequest;
 import org.example.bookslibrary.exception.NotFoundException;
-import org.example.bookslibrary.mapper.UserMapper;
+import org.example.bookslibrary.modules.User.mapper.UserMapper;
 import org.example.bookslibrary.model.User.User;
 import org.example.bookslibrary.model.User.UserRepository;
-import org.example.bookslibrary.service.UserService;
+import org.example.bookslibrary.modules.User.service.UserService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 

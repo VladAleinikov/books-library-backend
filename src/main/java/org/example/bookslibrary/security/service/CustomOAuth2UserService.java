@@ -1,9 +1,9 @@
 package org.example.bookslibrary.security.service;
 
-import org.example.bookslibrary.dto.user.UserSyncRequest;
+import org.example.bookslibrary.modules.User.dto.user.UserSyncRequest;
 import org.example.bookslibrary.model.User.User;
 import org.example.bookslibrary.security.user.AuthUser;
-import org.example.bookslibrary.service.UserService;
+import org.example.bookslibrary.modules.User.service.UserService;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;

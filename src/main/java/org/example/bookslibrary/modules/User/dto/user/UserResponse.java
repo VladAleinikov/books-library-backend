@@ -1,4 +1,4 @@
-package org.example.bookslibrary.dto.user;
+package org.example.bookslibrary.modules.User.dto.user;
 
 public record UserResponse(
         String id,

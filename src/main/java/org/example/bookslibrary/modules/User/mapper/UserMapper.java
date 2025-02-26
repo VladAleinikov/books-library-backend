@@ -1,6 +1,6 @@
-package org.example.bookslibrary.mapper;
+package org.example.bookslibrary.modules.User.mapper;
 
-import org.example.bookslibrary.dto.user.UserResponse;
+import org.example.bookslibrary.modules.User.dto.user.UserResponse;
 import org.example.bookslibrary.model.User.User;
 import org.mapstruct.Mapper;
 

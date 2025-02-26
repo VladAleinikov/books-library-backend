@@ -1,7 +1,7 @@
-package org.example.bookslibrary.controller;
+package org.example.bookslibrary.modules.User.controller;
 
-import org.example.bookslibrary.dto.user.UserResponse;
-import org.example.bookslibrary.service.UserService;
+import org.example.bookslibrary.modules.User.dto.user.UserResponse;
+import org.example.bookslibrary.modules.User.service.UserService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
