@@ -1,6 +1,6 @@
 package org.example.bookslibrary.security.service;
 
-import org.example.bookslibrary.modules.User.dto.user.UserSyncRequest;
+import org.example.bookslibrary.modules.User.dto.UserSyncRequest;
 import org.example.bookslibrary.model.User.User;
 import org.example.bookslibrary.security.user.AuthUser;
 import org.example.bookslibrary.modules.User.service.UserService;

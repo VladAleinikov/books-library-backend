@@ -1,4 +1,4 @@
-package org.example.bookslibrary.modules.User.dto.user;
+package org.example.bookslibrary.modules.User.dto;
 
 public record UserSyncRequest(String oauth2Id, String name, String email, String avatarUrl) {
 }
