@@ -1,6 +1,6 @@
 package org.example.bookslibrary.modules.User.controller;
 
-import org.example.bookslibrary.modules.User.dto.user.UserResponse;
+import org.example.bookslibrary.modules.User.dto.UserResponse;
 import org.example.bookslibrary.modules.User.service.UserService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;

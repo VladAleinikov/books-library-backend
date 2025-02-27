@@ -1,7 +1,7 @@
 package org.example.bookslibrary.modules.User.service.impl;
 
-import org.example.bookslibrary.modules.User.dto.user.UserResponse;
-import org.example.bookslibrary.modules.User.dto.user.UserSyncRequest;
+import org.example.bookslibrary.modules.User.dto.UserResponse;
+import org.example.bookslibrary.modules.User.dto.UserSyncRequest;
 import org.example.bookslibrary.exception.NotFoundException;
 import org.example.bookslibrary.modules.User.mapper.UserMapper;
 import org.example.bookslibrary.model.User.User;

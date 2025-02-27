@@ -1,7 +1,7 @@
 package org.example.bookslibrary.modules.User.service;
 
-import org.example.bookslibrary.modules.User.dto.user.UserResponse;
-import org.example.bookslibrary.modules.User.dto.user.UserSyncRequest;
+import org.example.bookslibrary.modules.User.dto.UserResponse;
+import org.example.bookslibrary.modules.User.dto.UserSyncRequest;
 import org.example.bookslibrary.model.User.User;
 import org.springframework.data.domain.Pageable;
 
